@@ -15,7 +15,7 @@ import {
 } from "@/api/tool/gen-tables";
 import { type PaginationProps } from "@pureadmin/table";
 import { reactive, ref, onMounted, h, toRaw } from "vue";
-import { addDialog } from "@/components/ReDialog";
+import { addDialog,closeAllDialog } from "@/components/ReDialog";
 import { getKeyList } from "@pureadmin/utils";
 
 export function useGenTables() {
@@ -344,6 +344,7 @@ export function useGenTables() {
           type: "error"
         });
       }
+      closeAllDialog();
     });
   }
 
